@@ -1,7 +1,7 @@
 from Node import Node
 
 
-class Lista_ordenada:
+class ListaOrdenada:
     def __init__(self):
         self.__primeiro = None
         self.__ultimo = None
@@ -161,7 +161,7 @@ class Lista_ordenada:
                     break
                 atual = atual.prox
 
-lista = Lista_ordenada()
+lista = ListaOrdenada()
 
 lista.InserirOrdenado(1)
 lista.InserirOrdenado(0)
