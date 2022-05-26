@@ -1,114 +1,60 @@
 from Node import Node
 
+ #  inserir odenado self.inserir_posiçao(pos)
+#-  Excluir ( ID do elemento a ser excluído)
+#- (elemento) Buscar ( ID do elemento procurado)
+# OK
+
 
 class ListaOrdenada:
     def __init__(self):
         self.__primeiro = None
         self.__ultimo = None
 
-    def InserirOrdenado(self, valor):
+    def InserirOrdenado(self, nome, cpf):
         if self.__primeiro != None:
-            if valor > self.__ultimo.valor:
-                self.__ultimo.prox = Node(valor, None)
+            if cpf > self.__ultimo.cpf:
+                print("-1")
+                self.__ultimo.prox = Node(nome, cpf, None)
+                self.__ultimo = self.__ultimo.prox
                 return
-            
+
         
             atual = self.__primeiro
             antigo = None
             while True:
-                if valor < atual.valor:
+                if cpf < atual.cpf:
                     if antigo == None:
                         print("a")
-                        self.__primeiro = Node(valor, atual)
+                        self.__primeiro = Node(nome, cpf, atual)
+                        break
 
                     else:
                         print("b")
-                        antigo.prox = Node(valor, atual)
-                        
-                else:
-                    atual.prox = Node(valor, atual.prox)
+                        antigo.prox = Node(nome, cpf, atual)
+                        break
+
+                elif cpf == atual.cpf:
+                    break
+
                 if atual.prox == None:
                     break
+                
+                print("d")
                 antigo = atual
                 atual = atual.prox 
         else:
-            self.__primeiro = Node(valor, None)
+            print("e")
+            self.__primeiro = Node(nome, cpf, None)
             self.__ultimo = self.__primeiro
-       
 
-
- #       self.inserir_posiçao(pos)
-#-  Excluir ( ID do elemento a ser excluído)
-#- (elemento) Buscar ( ID do elemento procurado)
-
-
-
-    def inserir_posiçao(self, pos, valor):
-        if self.__primeiro != None:
-            atual = self.__primeiro
-            if pos == 0:
-                if self.__primeiro.prox == None:
-                    self.__ultimo = self.__primeiro
-                    self.__primeiro = Node(valor, self.__primeiro)
-                else:
-                    self.__primeiro = Node(valor, self.__primeiro)
-
-            elif pos == -1:
-                self.__ultimo.prox = Node(valor, None)
-                self.__ultimo = self.__ultimo.prox
-            
-            else:
-                atual = self.__primeiro
-                antigo = None
-                for i in range(0, pos + 1):
-                    if i == pos:
-                        if atual.prox == None:
-                            atual.prox = Node(valor, None)
-                            self.__ultimo = atual.prox
-                            break
-                        else:
-                            antigo.prox = Node(valor, atual)
-                            break
-
-                    antigo = atual
-                    atual = atual.prox
-                    
-    def excluir_posiçao(self, pos):
-        if pos == 0:
-            self.__primeiro = self.__primeiro.prox
-
-        else:
-            atual = self.__primeiro
-            for i in range(pos):
-                if atual.prox == None:
-                    return
-
-                antigo = atual
-                atual = atual.prox
-
-            antigo.prox = atual.prox
-            
-    def excluir_primeiro(self):
-        if self.__primeiro != None:
-            self.__primeiro = self.__primeiro.prox
-
-    def excluir_ultimo(self):
-        if self.__primeiro != None:
-            atual = self.__primeiro
-            while True:
-                if atual.prox == self.__ultimo:
-                    atual.prox = None
-                    self.__ultimo = atual
-                    break
-
-                atual = atual.prox
-
-    def excluir_elemento(self, valor):
+    
+    def excluir_cpf(self, cpf):
         if self.__primeiro != None:
             atual = self.__primeiro
             antigo = None
             while True:
-                if atual.valor == valor:
+                if atual.cpf == cpf:
                     if antigo == None:
                         self.__primeiro = atual.prox
                     elif atual.prox == None:
@@ -125,11 +71,26 @@ class ListaOrdenada:
 
                 antigo = atual
                 atual = atual.prox
+                
+    def excluir_primeiro(self):
+        if self.__primeiro != None:
+            self.__primeiro = self.__primeiro.prox
 
-    def acessar_referencia(self, valor):
+    def excluir_ultimo(self):
+        if self.__primeiro != None:
+            atual = self.__primeiro
+            while True:
+                if atual.prox == self.__ultimo:
+                    atual.prox = None
+                    self.__ultimo = atual
+                    break
+
+                atual = atual.prox
+
+    def acessar_referencia(self, nome):
         atual = self.__primeiro
         while True:
-            if atual.valor == valor:
+            if atual.nome == nome:
                 return atual
 
             if atual.prox == None:
@@ -152,23 +113,25 @@ class ListaOrdenada:
         return self.__primeiro
 
     def iterar(self):
-        print(self.__primeiro.valor, self.__ultimo.valor)
+        print(self.__primeiro.nome, self.__ultimo.nome)
         if self.__primeiro != None:
             atual = self.__primeiro
             while True:
-                print(f"{atual.valor} ({atual}, {atual.prox})", end=", ")
+                print(f"{atual.nome}, ' CPF: ', {atual.cpf}, ({atual}, {atual.prox})", end=", ")
                 if atual.prox == None:
                     break
                 atual = atual.prox
 
 lista = ListaOrdenada()
 
-lista.InserirOrdenado(1)
-lista.InserirOrdenado(0)
-lista.InserirOrdenado(3)
-#lista.InserirOrdenado(2)
-lista.InserirOrdenado(-1)
-lista.InserirOrdenado(4)
-lista.InserirOrdenado(5)
+lista.InserirOrdenado("Pedro", 1)
+lista.InserirOrdenado("Marcio", 2)
+lista.InserirOrdenado("Lucas", 3)
+lista.InserirOrdenado("Jose", 4)
+lista.InserirOrdenado("Joao", 3)
+lista.excluir_primeiro()
+lista.excluir_ultimo()
+lista.InserirOrdenado("De Lucca", 10)
+lista.excluir_cpf(3)
 
 lista.iterar()
