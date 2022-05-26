@@ -14,7 +14,6 @@ class ListaOrdenada:
     def InserirOrdenado(self, nome, cpf):
         if self.__primeiro != None:
             if cpf > self.__ultimo.cpf:
-                print("-1")
                 self.__ultimo.prox = Node(nome, cpf, None)
                 self.__ultimo = self.__ultimo.prox
                 return
@@ -25,12 +24,10 @@ class ListaOrdenada:
             while True:
                 if cpf < atual.cpf:
                     if antigo == None:
-                        print("a")
                         self.__primeiro = Node(nome, cpf, atual)
                         break
 
                     else:
-                        print("b")
                         antigo.prox = Node(nome, cpf, atual)
                         break
 
@@ -40,11 +37,9 @@ class ListaOrdenada:
                 if atual.prox == None:
                     break
                 
-                print("d")
                 antigo = atual
                 atual = atual.prox 
         else:
-            print("e")
             self.__primeiro = Node(nome, cpf, None)
             self.__ultimo = self.__primeiro
 
