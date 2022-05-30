@@ -35,6 +35,11 @@ class ListaOrdenada(ListaEncadeada):
                     antigo = atual
                     atual = atual.prox 
 
+    def excluir_elemento(self, identificador):      
+        super().excluir_elemento(identificador)
+    
+    def acessar_referencia(self, identificador):
+        super().acessar_referencia(identificador)
 
 
 #lista = ListaOrdenada()

@@ -69,38 +69,18 @@ class ClasseTeste:
 
 
     def iterar(self, lista):
+        print("")
         try:
             if lista == 1:
-                print("")
-                print(f"Primeiro: {self.lista_ordernada1.primeiro.valor}, Ultimo: {self.lista_ordernada1.ultimo.valor}")
-                if self.lista_ordernada1.primeiro != None:
-                    atual = self.lista_ordernada1.primeiro
-
-                    while True:
-                        print(f"ID: {atual.identificador} / Valor: {atual.valor} ({atual}, {atual.prox})")
-
-                        if atual.prox == None:
-                            break
-
-                        atual = atual.prox
-                print("")
+                self.lista_ordernada1.iterar()
                     
             else:
-                print(f"Primeiro: {self.lista_ordernada2.primeiro.valor}, Ultimo: {self.lista_ordernada2.ultimo.valor}")
-                if self.lista_ordernada2.primeiro != None:
-                    atual = self.lista_ordernada2.primeiro
+                self.lista_ordernada2.iterar()
 
-                    while True:
-                        print(f"ID: {atual.identificador} / Valor: {atual.valor} ({atual}, {atual.prox})")
+            print("")
 
-                        if atual.prox == None:
-                            break
-
-                        atual = atual.prox
-                print("")
         except:
             print("Listas Vazias")
-
 
 
 #teste = ClasseTeste()
