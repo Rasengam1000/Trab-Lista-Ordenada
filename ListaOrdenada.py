@@ -7,7 +7,7 @@ class ListaOrdenada(ListaEncadeada):
         super().__init__()
 
 
-    def InserirOrdenado(self, valor, identificador):
+    def inserir_ordenado(self, valor, identificador):
         if self.primeiro == None:
             self.inserir_primeiro(valor, identificador)
 
@@ -37,14 +37,14 @@ class ListaOrdenada(ListaEncadeada):
 
 
 
-lista = ListaOrdenada()
+#lista = ListaOrdenada()
 
-lista.InserirOrdenado("Marcio", 2)
-lista.InserirOrdenado("Pedro", 1)
-lista.InserirOrdenado("Lucas", 3)
-lista.InserirOrdenado("Jose", 4)
-lista.InserirOrdenado("Joao", 3)
-lista.InserirOrdenado("Luiz", 15888888)
-lista.InserirOrdenado("Roca", 3)
+#lista.inserir_ordenado("Marcio", 2)
+#lista.inserir_ordenado("Pedro", 1)
+#lista.inserir_ordenado("Lucas", 3)
+#lista.inserir_ordenado("Jose", 4)
+#lista.inserir_ordenado("Joao", 3)
+#lista.inserir_ordenado("Luiz", 15888888)
+#lista.inserir_ordenado("Roca", 3)
 
-lista.iterar()
+#lista.iterar()

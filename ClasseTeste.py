@@ -26,7 +26,7 @@ class ClasseTeste:
 
                 elif menu2 == 1:
                     valor, identificador = input("Insira o Valor e o Identificador (numérico) separados por 1 espaço: ").split()
-                    lista.InserirOrdenado(valor, int(identificador))
+                    lista.inserir_ordenado(valor, int(identificador))
                 
                 elif menu2 == 2:
                     identificador = input("Insira o Identificador (numérico): ")
@@ -44,25 +44,25 @@ class ClasseTeste:
 
 
     def pre_feito(self):
-        self.lista_ordernada1.InserirOrdenado("Joao", 10)
-        self.lista_ordernada1.InserirOrdenado("Marcio", 2)
-        self.lista_ordernada1.InserirOrdenado("Pedro", 1)
-        self.lista_ordernada1.InserirOrdenado("Lucas", 3)
-        self.lista_ordernada1.InserirOrdenado("Luca", 3)
-        self.lista_ordernada1.InserirOrdenado("Jose", 4)
-        self.lista_ordernada1.InserirOrdenado("Luiz", 7)
-        self.lista_ordernada1.InserirOrdenado("Roca", 524893)
+        self.lista_ordernada1.inserir_ordenado("Joao", 10)
+        self.lista_ordernada1.inserir_ordenado("Marcio", 2)
+        self.lista_ordernada1.inserir_ordenado("Pedro", 1)
+        self.lista_ordernada1.inserir_ordenado("Lucas", 3)
+        self.lista_ordernada1.inserir_ordenado("Luca", 3)
+        self.lista_ordernada1.inserir_ordenado("Jose", 4)
+        self.lista_ordernada1.inserir_ordenado("Luiz", 7)
+        self.lista_ordernada1.inserir_ordenado("Roca", 524893)
 
         self.iterar(1)
 
-        self.lista_ordernada2.InserirOrdenado("Joao", 10)
-        self.lista_ordernada2.InserirOrdenado("Marcio", -15)
-        self.lista_ordernada2.InserirOrdenado("Pedro", 0)
-        self.lista_ordernada2.InserirOrdenado("Lucas", 75)
-        self.lista_ordernada2.InserirOrdenado("Luca", 39)
-        self.lista_ordernada2.InserirOrdenado("Jose", 4)
-        self.lista_ordernada2.InserirOrdenado("Luiz", 4)
-        self.lista_ordernada2.InserirOrdenado("Roca", 1254877)
+        self.lista_ordernada2.inserir_ordenado("Joao", 10)
+        self.lista_ordernada2.inserir_ordenado("Marcio", -15)
+        self.lista_ordernada2.inserir_ordenado("Pedro", 0)
+        self.lista_ordernada2.inserir_ordenado("Lucas", 75)
+        self.lista_ordernada2.inserir_ordenado("Luca", 39)
+        self.lista_ordernada2.inserir_ordenado("Jose", 4)
+        self.lista_ordernada2.inserir_ordenado("Luiz", 4)
+        self.lista_ordernada2.inserir_ordenado("Roca", 1254877)
 
         self.iterar(2)
 
@@ -103,7 +103,7 @@ class ClasseTeste:
 
 
 
-teste = ClasseTeste()
+#teste = ClasseTeste()
 
-teste.pre_feito()
+#teste.pre_feito()
 #teste.menu()
