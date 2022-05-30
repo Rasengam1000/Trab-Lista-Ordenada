@@ -44,51 +44,6 @@ class ListaEncadeada:
             self.__ultimo.prox = Node(identificador, valor, None)
             self.__ultimo = self.__ultimo.prox
 
-
-    def inserir_posiçao(self, pos, valor):
-        if self.__primeiro != None:
-            atual = self.__primeiro
-            if pos == 0:
-                if self.__primeiro.prox == None:
-                    self.__ultimo = self.__primeiro
-                    self.__primeiro = Node(identificador, valor, self.__primeiro)
-                else:
-                    self.__primeiro = Node(identificador, valor, self.__primeiro)
-
-            elif pos == -1:
-                self.__ultimo.prox = Node(identificador, valor, None)
-                self.__ultimo = self.__ultimo.prox
-            
-            else:
-                atual = self.__primeiro
-                antigo = None
-                for i in range(0, pos + 1):
-                    if i == pos:
-                        if atual.prox == None:
-                            atual.prox = Node(identificador, valor, None)
-                            self.__ultimo = atual.prox
-                            break
-                        else:
-                            antigo.prox = Node(identificador, valor, atual)
-                            break
-
-                    antigo = atual
-                    atual = atual.prox
-                    
-    def excluir_posiçao(self, pos):
-        if pos == 0:
-            self.__primeiro = self.__primeiro.prox
-
-        else:
-            atual = self.__primeiro
-            for i in range(pos):
-                if atual.prox == None:
-                    return
-
-                antigo = atual
-                atual = atual.prox
-
-            antigo.prox = atual.prox
             
     def excluir_primeiro(self):
         if self.__primeiro != None:
@@ -139,17 +94,6 @@ class ListaEncadeada:
 
             atual = atual.prox 
 
-    def acessar_posiçao(self, pos):
-        atual = self.__primeiro
-        for i in range(pos+1):
-            if i == pos:
-                return atual
-
-            if atual.prox == None:
-                break
-
-            atual = atual.prox 
-
     def acessar_primeiro(self):
         return self.__primeiro
 
@@ -173,11 +117,7 @@ class ListaEncadeada:
 #lista.inserir_primeiro(3)
 #lista.inserir_ultimo(4)
 #lista.inserir_ultimo(5)
-#lista.inserir_posiçao(0, 0)
-#lista.inserir_posiçao(5, 6)
-#lista.inserir_posiçao(6, 7)
 #lista.iterar()
-#lista.excluir_posiçao(0)
 #lista.excluir_elemento(1)
 #lista.excluir_primeiro()
 #lista.excluir_ultimo()
