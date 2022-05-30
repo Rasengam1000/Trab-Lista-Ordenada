@@ -1,29 +1,29 @@
 class Node:
-    def __init__(self, nome, cpf, prox):
-        self.__nome = nome
-        self.__cpf = int(cpf)
+    def __init__(self, identificador, valor, prox):
+        self.__valor = valor
+        self.__identificador = int(identificador)
         self.__prox = prox
 
     @property
-    def cpf(self):
-        return self.__cpf
+    def identificador(self):
+        return self.__identificador
 
     @property
-    def prox (self):
+    def prox(self):
         return self.__prox
         
     @property
-    def nome (self):
-        return self.__nome
+    def valor(self):
+        return self.__valor
 
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome
+    @valor.setter
+    def valor(self, valor):
+        self.__valor = valor
 
     @prox.setter
-    def prox (self, prox):
+    def prox(self, prox):
         self.__prox = prox
 
-    @cpf.setter
-    def cpf (self, cpf):
-        self.__cpf = cpf
+    @identificador.setter
+    def identificador(self, identificador):
+        self.__identificador = identificador
