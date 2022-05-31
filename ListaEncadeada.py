@@ -14,6 +14,14 @@ class ListaEncadeada:
     def ultimo(self):
         return self.__ultimo
 
+    @property
+    def inserir_primeiro(self):
+        return self.__inserir_primeiro
+
+    @property
+    def inserir_ultimo(self):
+        return self.__inserir_ultimo
+        
     @primeiro.setter
     def primeiro(self, primeiro):
         self.__primeiro = primeiro
@@ -23,7 +31,7 @@ class ListaEncadeada:
         self.__ultimo = ultimo
 
 
-    def inserir_primeiro(self, valor, identificador):
+    def __inserir_primeiro(self, valor, identificador):
         if self.__primeiro == None:
             self.__primeiro = Node(identificador, valor, None)
             self.__ultimo = self.__primeiro
@@ -33,7 +41,7 @@ class ListaEncadeada:
         else:
             self.__primeiro = Node(identificador, valor, self.__primeiro)
 
-    def inserir_ultimo(self, valor, identificador):
+    def __inserir_ultimo(self, valor, identificador):
         if self.__ultimo == None:
             self.__primeiro = Node(identificador, valor, None)
             self.__ultimo = self.__primeiro
